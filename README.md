@@ -11,6 +11,14 @@ It defines a CentOS 7 Docker image which augments its yum installation in the fo
 1. Adds the ability (and only this ability) to authenticate to the S3 buckets via [AWS cli profiles.](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 1. Adds a yum command line option to specify the profile instead of 'hardcoding' it into the yum config under /etc/yum.repos.d
 
+# Installation
+
+If you want to install this plugin directly (and not use the docker image), replicate the steps in the Dockerfile:
+
+1. Copy `s3.repo` `/etc/yum.repos.d/`
+1. Copy `s3.conf` `/etc/yum/pluginconf.d/`
+1. Copy `s3.py` `/usr/lib/yum-plugins`
+
 # Notes
 
 As of this writing, only python2 is supported because of how yum works.
@@ -37,6 +45,3 @@ or
 docker run -it -v $HOME/.aws:/root/.aws ${image_name} -c 'yum --profile=${profile_name} list available'
 ```
 
-## Coming Soon
-
-A pyproject.toml to allow for direct installation (hopefully)

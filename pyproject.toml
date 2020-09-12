@@ -1,0 +1,31 @@
+[project]
+name = "s3-yum-repository"
+version = "2.0.0"
+description = "Use S3 buckets as yum repositories, authenticating via named AWS cli profiles"
+authors = [
+    "Brian Auron <brianauron@gmail.com>",
+    "Julius Seporaitis <julius@seporaitis.net"
+]
+license = "Apache 2.0"
+readme = "README.md"
+python = "^2.7"
+homepage = "https://github.com/Resisty/s3-yum-repository"
+repository = "https://github.com/Resisty/s3-yum-repository"
+documentation = "https://github.com/Resisty/s3-yum-repository"
+
+keywords = ["s3", "yum", "repository"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Packaging"
+]
+
+[dependencies]
+yum = "^0.0.1"
+boto3 = "^1.14.60"
+pathlib = "^1.0.1"
+
+[build-system]
+requires = ["setuptools >= 40.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
